@@ -1,0 +1,29 @@
+<script>
+    function a0(n) {
+        var count = 0;
+        for (var i = 0; i < n; i++) {
+            count += 1;
+        }
+        return count;
+    }
+
+    function a1(n) {
+        var count = 0;
+        for (var i = 0; i < 5 * n; i++) {
+            count += 1;
+        }
+        return count;
+    }
+
+    function a2(n) {
+        var count = 0;
+        for (var i = 0; i < n; i++) {
+            count += 1;
+        }
+        count += 3;
+        return count;
+    }
+    // console.log(a0(5));
+    // console.log(a1(6));
+    console.log(a2(6));
+</script>
