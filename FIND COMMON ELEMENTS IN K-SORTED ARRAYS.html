@@ -1,0 +1,42 @@
+<script>
+    function commonElements(kArray) {
+        var hashmap = {},
+            last, answer = [];
+
+        for (var i = 0, kArrayLength = kArray.length; i < kArrayLength; i++) {
+            var currentArray = kArray[i];
+            last = null;
+            console.log('karray awal = %O', kArray)
+            for (var j = 0, currentArrayLen = currentArray.length; j < currentArrayLen; j++) {
+                var currentElement = currentArray[j];
+                console.log('cureent element = %O', currentElement)
+                if (last != currentElement) {
+                    if (!hashmap[currentElement]) {
+                        hashmap[currentElement] = 1;
+
+                    } else {
+                        hashmap[currentElement]++;
+                    }
+
+                }
+                console.log('hashmap  = %O', hashmap)
+                last = currentElement;
+                console.log('last  = %O', last)
+            }
+        }
+
+        // Iterate through hashmap
+        for (var prop in hashmap) {
+            if (hashmap[prop] == kArray.length) {
+                answer.push(parseInt(prop));
+            }
+        }
+        return answer;
+    }
+
+    commonElements([
+        [1, 2, 3],
+        [1, 2, 3, 4],
+        [1, 2]
+    ]); // [ 1, 2 ]
+</script>
